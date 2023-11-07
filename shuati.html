@@ -82,7 +82,8 @@
 		</style>
 	</head>
 	<body>
-<p id="current-question">当前做到第 <span id="current-question-number">0</span> 题，共 <span id="total-questions">0</span> 题。</p>
+		<p id="current-question">当前做到第 <span id="current-question-number">0</span> 题，共 <span
+				id="total-questions">0</span> 题。</p>
 
 		<div style="display: flex; justify-content: center;">
 			<div class="button-container">
@@ -127,21 +128,21 @@
 		<script>
 			let shuffleQuestions = false; // 默认不打乱顺序
 			function toggleShuffle() {
-			    shuffleQuestions = !shuffleQuestions; // 切换状态
-			    if (shuffleQuestions) {
-			        alert("题目顺序现在将会被打乱。");
-			    } else {
-			        alert("题目顺序现在将按照原始顺序显示。");
-			    }
+				shuffleQuestions = !shuffleQuestions; // 切换状态
+				if (shuffleQuestions) {
+					alert("题目顺序现在将会被打乱。");
+				} else {
+					alert("题目顺序现在将按照原始顺序显示。");
+				}
 			}
 
 
-			
+
 			function shuffleArray(array) {
-			    for (let i = array.length - 1; i > 0; i--) {
-			        const j = Math.floor(Math.random() * (i + 1));
-			        [array[i], array[j]] = [array[j], array[i]]; // 交换元素
-			    }
+				for (let i = array.length - 1; i > 0; i--) {
+					const j = Math.floor(Math.random() * (i + 1));
+					[array[i], array[j]] = [array[j], array[i]]; // 交换元素
+				}
 			}
 
 			const singleChoiceQuestions = [{
@@ -150,11 +151,12 @@
 					"choices": ["A: 继承性", "B: 动态性", "C: 同步性", "D: 封装性"],
 					"answer": "A: 继承性",
 					"explanation": "正确答案是 A。继承性允许子类继承父类的属性和方法，实现了代码的重用。"
-				},{
+				},
+				{
 					"type": "choice",
 					"question": "下列构造方法的调用方式中，正确的是（ ）。",
 					"choices": ["A: 按照一般方法调用", "B: 由用户直接调用", "C: 只能通过 new 自动调用", "D: 被系统调用"],
-					"answer": "C",
+					"answer": "C: 只能通过 new 自动调用",
 					"explanation": "正确答案是 C。构造方法只能通过 new 操作符自动调用来创建类的实例。"
 				},
 				{
@@ -163,28 +165,28 @@
 					"choices": ["A: ArrayList myList=new Object( )", "B: List myList=new ArrayList( )",
 						"C: ArrayList myList=new List( )", "D: List myList=new List( )"
 					],
-					"answer": "B",
+					"answer": "B: List myList=new ArrayList( )",
 					"explanation": "正确答案是 B。通过创建一个 ArrayList 的实例并将其分配给 List 类型的引用 myList，实现了接口继承和代码重用。"
 				},
 				{
 					"type": "choice",
 					"question": "MVC 模式中，控制器的作用是________。",
 					"choices": ["A: 从模型中获取数据并指定这些数据应该如何表现", "B: 控制器负责转发请求，对请求进行处理", "C: 负责处理业务逻辑", "D: 以上都不是"],
-					"answer": "B",
+					"answer": "B: 控制器负责转发请求，对请求进行处理",
 					"explanation": "正确答案是 B。在 MVC 模式中，控制器负责接收和处理用户的请求，并根据请求来调用相应的模型（业务逻辑）以及视图（表示层）进行处理。"
 				},
 				{
 					"type": "choice",
 					"question": "适合下列配置的注解是哪个？\n<bean id=\"dog\" class=\"cn.edu.neusoft.model.vo.Dog\"></bean>",
 					"choices": ["A: @Component", "B: @Service", "C: @Controller@Repository"],
-					"answer": "A",
+					"answer": "A: @Component",
 					"explanation": "正确答案是 A。@Component 注解通常用于标记普通 Java 类，以便 Spring 可以自动扫描并创建它们的实例。"
 				},
 				{
 					"type": "choice",
 					"question": "下面不是 Spring AOP 注解的是",
 					"choices": ["A: @Before", "B: @AfterReturn", "C: @Around", "D: @AfterThrowing"],
-					"answer": "B",
+					"answer": "B: @AfterReturn",
 					"explanation": "正确答案是 B。@AfterReturn 在 Spring AOP 中是无效的注解。"
 				},
 				{
@@ -193,14 +195,14 @@
 					"choices": ["A: 依赖注入的目标是在代码之外管理程序组建间的依赖关系", "B: 依赖注入即是“面向接口”的编程", "C: 依赖注入是面向对象技术的替代品",
 						"D: 依赖注入的使用会增大程序的规模"
 					],
-					"answer": "A",
+					"answer": "A: 依赖注入的目标是在代码之外管理程序组建间的依赖关系",
 					"explanation": "正确答案是 A。依赖注入的主要目标是在代码之外管理组件之间的依赖关系，以提高可维护性和灵活性。"
 				},
 				{
 					"type": "choice",
 					"question": "SpringMVC 的中心控制 Servlet 是哪个类？",
 					"choices": ["A: ActionServlet", "B: AbstractController", "C: DispatcherServlet", "D: FacesServlet"],
-					"answer": "C",
+					"answer": "C: DispatcherServlet",
 					"explanation": "正确答案是 C。SpringMVC 的中心控制 Servlet 是 DispatcherServlet，它负责接收和处理所有的客户端请求，并将其分发到相应的控制器进行处理。"
 				},
 				{
@@ -211,7 +213,7 @@
 						"C: 在 web.xml 中，根据 servlet-mapping 的 URL 不同，可以配置多个 DispatcherServlet",
 						"D: ModelAndView 中的 view 是逻辑视图名，而非真正的视图对象"
 					],
-					"answer": "A",
+					"answer": "A: SpringMVC 中必须是实现了 Handler 接口的 JavaBean 才能成为请求处理器",
 					"explanation": "正确答案是 A。在 SpringMVC 中，请求处理器不必实现 Handler 接口，它可以是任何普通的 JavaBean。"
 				},
 				{
@@ -223,14 +225,14 @@
 						"C: public String index (String username, Map<String, Object> map) { map.put(\"username\", username); return \"welcome.jsp\"; }",
 						"D: public String index (String username, Model model) { model.addAttribute(username); return welcome; }"
 					],
-					"answer": "A",
+					"answer": "A: public String index (Map<String, Object> map, String username) { map.put(\"username\", username); return \"welcome\"; }",
 					"explanation": "正确答案是 A。在方法 A 中，Map 类型的参数 map 用于存储数据，可以在 JSP 中显示出 username 数据，并且返回逻辑视图名 \"welcome\"，匹配 InternalResourceViewResolver 的配置。"
-				}, 
+				},
 				{
 					"type": "choice",
 					"question": "下面选项那一项不是映射 xml 文件<resultMap>的子标签？",
 					"choices": ["A: <id>", "B: <results>", "C: <association>", "D: <collection>"],
-					"answer": "B",
+					"answer": "B: <results>",
 					"explanation": "正确答案是 B。"
 				},
 				{
@@ -239,149 +241,209 @@
 					"choices": ["A: properties、settings、plugins、typeAliases", "B: properties、typeAliases、setting、plugins",
 						"C: properties、typeAliases、plugins、setting", "D: properties、settings、typeAliases、plugins"
 					],
-					"answer": "D",
+					"answer": "D: properties、settings、typeAliases、plugins",
 					"explanation": "正确答案是 D。"
 				},
 				{
 					"type": "choice",
 					"question": "MyBatis 的插件是通过拦截器实现。可以拦截类中的时机有四个，包括执行 SQL 的全过程、重写执行 SQL 的过程、执行 SQL 的参数组装、执行结果的组装。下列哪个不是配置拦截时机的参数？",
-					"choices": ["A: Executor", "B: ParameterHandler", "C: TypeHandler", "D: StatementHandler"],
-					"answer": "C",
-					"explanation": "正确答案是 C。"
+					"choices": [
+						"A: Executor",
+						"B: ParameterHandler",
+						"C: TypeHandler",
+						"D: StatementHandler"
+					],
+					"answer": "C: TypeHandler",
+				 "explanation": "正确答案是 C。TypeHandler 不是配置拦截时机的参数。"
 				},
 				{
 					"type": "choice",
 					"question": "关于 ANY 与 ALL 关键字说法不正确的是",
-					"choices": ["A: ANY 和 ALL 关键字必须与比较运算符一起使用", "B: ANY 与 SOME 关键字含义相同", "C: ANY 与 ALL 关键字用于一个值与一组值的比较",
-						"D: 在查询最高或最低数值时通常可以使用 ANY 关键字"
+					"choices": [
+						"A: ANY 和 ALL 关键字必须与比较运算符一起使用",
+						"B: ANY 与 SOME 关键字含义相同",
+						"C: ANY 与 ALL 关键字用于一个值与一组值的比较",
+				  "D: 在查询最高或最低数值时通常可以使用 ANY 关键字"
 					],
-					"answer": "D",
-					"explanation": "正确答案是 D。"
+					"answer": "D: 在查询最高或最低数值时通常可以使用 ANY 关键字",
+					"explanation": "正确答案是 D。ANY 关键字通常不用于查询最高或最低数值，这是不正确的说法。"
 				},
 				{
 					"type": "choice",
 					"question": "下面关于 ORDER BY 子句说法不正确的是？",
-					"choices": ["A: ORDER BY 只能对一个字段进行排序", "B: DESC 表示进行降序排序", "C: ASC 表示升序排序",
+					"choices": [
+						"A: ORDER BY 只能对一个字段进行排序",
+						"B: DESC 表示进行降序排序",
+						"C: ASC 表示升序排序",
 						"D: 使用 ORDER BY 进行排序时，ORDER BY 后可接列名，别名或序号"
 					],
-					"answer": "A",
-					"explanation": "正确答案是 A。"
+					"answer": "A: ORDER BY 只能对一个字段进行排序",
+					"explanation": "正确答案是 A。ORDER BY 可以对多个字段进行排序，不仅限于一个。"
 				},
 				{
 					"type": "choice",
 					"question": "MySQL 中，如果数学函数出现错误，那么它的返回值是？",
-					"choices": ["A: 状态码", "B: NULL", "C: 0", "D: 以上都不对"],
-					"answer": "B",
-					"explanation": "正确答案是 B。"
+					"choices": [
+						"A: 状态码",
+				  "B: NULL",
+						"C: 0",
+						"D: 以上都不对"
+					],
+					"answer": "B: NULL",
+					"explanation": "正确答案是 B。如果数学函数出现错误，其返回值通常是 NULL。"
 				},
 				{
 					"type": "choice",
 					"question": "数据库 library 中有自定义函数 sum_func,那删除该函数的语句正确的是？",
-					"choices": ["A: DROP TABLE sum_func", "B: DROP FUNCTION sum_func", "C: DROP PROCEDURE sum_func",
+					"choices": [
+						"A: DROP TABLE sum_func",
+						"B: DROP FUNCTION sum_func",
+						"C: DROP PROCEDURE sum_func",
 						"D: DROP VIEW sum_func"
 					],
-					"answer": "B",
-					"explanation": "正确答案是 B。"
+					"answer": "B: DROP FUNCTION sum_func",
+					"explanation": "正确答案是 B。删除自定义函数应使用 DROP FUNCTION 语句。"
 				},
 				{
 					"type": "choice",
 					"question": "如果要查看当前数据库中的所有触发器，可以使用以下那个语句？",
-					"choices": ["A: SHOW DATABASE", "B: SHOW TRIGGERS", "C: SHOW TABLES", "D: SHOW FUNCTIONS"],
-					"answer": "B",
-					"explanation": "正确答案是 B。"
+					"choices": [
+						"A: SHOW DATABASE",
+						"B: SHOW TRIGGERS",
+						"C: SHOW TABLES",
+						"D: SHOW FUNCTIONS"
+					],
+					"answer": "B: SHOW TRIGGERS",
+					"explanation": "正确答案是 B。SHOW TRIGGERS 语句用于显示所有触发器。"
 				},
 				{
 					"type": "choice",
 					"question": "下列哪个不是 MyBatis 框架动态 SQL 的标签？",
-					"choices": ["A: choose", "B: trim", "C: resultmap", "D: foreach"],
-					"answer": "C",
-					"explanation": "正确答案是 C。"
+					"choices": [
+						"A: choose",
+						"B: trim",
+						"C: resultmap",
+				 	"D: foreach"
+					],
+					"answer": "C: resultmap",
+					"explanation": "正确答案是 C。resultmap 不是动态 SQL 的标签。"
 				},
 				{
 					"type": "choice",
 					"question": "如果使用 EL 显示请求的 URI，下面正确的是",
-					"choices": ["A: ${pageScope.request.requestURI)", "B: ${pageContext.request.requestURI)",
-						"C: $frequest.requestURI)", "D: $frequestScope.request.requestURI)"
+					"choices": [
+						"A: ${pageScope.request.requestURI)",
+						"B: ${pageContext.request.requestURI)",
+				 	"C: $frequest.requestURI)",
+						"D: $frequestScope.request.requestURI)"
 					],
-					"answer": "B",
-					"explanation": "正确答案是 B。"
-				}, {
-					"type": "choice",
+					"answer": "B: ${pageContext.request.requestURI)",
+					"explanation": "正确答案是 B。EL 表达式 ${pageContext.request.requestURI} 用于显示请求的 URI。"
+				},
+				{
+				 "type": "choice",
 					"question": "DROP DATABASE 语句返回的数值是？",
-					"choices": ["A: 代表删除成功", "B: 代表删除失败", "C: 代表删除的基本表个数", "D: 代表删除基本表或视图的个数"],
-					"answer": "C",
-					"explanation": "正确答案是 C。"
+					"choices": [
+						"A: 代表删除成功",
+						"B: 代表删除失败",
+						"C: 代表删除的基本表个数",
+						"D: 代表删除基本表或视图的个数"
+					],
+				 "answer": "C: 代表删除的基本表个数",
+					"explanation": "正确答案是 C。DROP DATABASE 语句返回的数值代表删除的基本表个数。"
 				},
 				{
 					"type": "choice",
 					"question": "下列关于表结构的描述不正确的是？",
-					"choices": ["A: 表结构包括表中的字段，也就是表的属性", "B: 表字段存储的数据类型也是表结构中的一种", "C: 表结构也包括主键、外键以及索引等内容", "D: 表结构也包括表视图。"],
-					"answer": "D",
-					"explanation": "正确答案是 D。"
+					"choices": [
+				 	"A: 表结构包括表中的字段，也就是表的属性",
+						"B: 表字段存储的数据类型也是表结构中的一种",
+						"C: 表结构也包括主键、外键以及索引等内容",
+						"D: 表结构也包括表视图。"
+					],
+					"answer": "D: 表结构也包括表视图。",
+					"explanation": "正确答案是 D。表视图不是表结构的一部分。"
 				},
 				{
 					"type": "choice",
 					"question": "MySQL8.0 默认的存储引擎是？",
-					"choices": ["A: MyISAM", "B: InnoDB", "C: BDB", "D: MEMORY"],
-					"answer": "B",
-					"explanation": "正确答案是 B。"
+					"choices": [
+						"A: MyISAM",
+						"B: InnoDB",
+						"C: BDB",
+						"D: MEMORY"
+					],
+					"answer": "B: InnoDB",
+					"explanation": "正确答案是 B。MySQL8.0 的默认存储引擎是 InnoDB。"
 				},
 				{
 					"type": "choice",
 					"question": "下面关于 bit(n)数据类型说法正确的是？",
-					"choices": ["A: n 表示 n 位二进制", "B: n 最大值为 128，默认为 1", "C: 如果分配长度小于 n 位，就在值的左边用 1 填充",
+					"choices": [
+						"A: n 表示 n 位二进制",
+						"B: n 最大值为 128，默认为 1",
+						"C: 如果分配长度小于 n 位，就在值的左边用 1 填充",
 						"D: bit 是一种可变长度的二进制字符串"
 					],
-					"answer": "A",
-					"explanation": "正确答案是 A。"
+					"answer": "A: n 表示 n 位二进制",
+					"explanation": "正确答案是 A。bit(n) 数据类型中的 n 表示二进制数的位数。"
 				},
 				{
 					"type": "choice",
 					"question": "在过滤器的声明配置中，可以在 web.xml 文件的刀元素中配置 <init-param>元素",
-					"choices": ["A: <filter>", "B: <filter-mapping >", "C: <filter-name>", "D: <filter-class>"],
-					"answer": "A",
-					"explanation": "正确答案是 A。"
+					"choices": [
+						"A: <filter>",
+						"B: <filter-mapping>",
+						"C: <filter-name>",
+						"D: <filter-class>"
+					],
+					"answer": "A: <filter>",
+					"explanation": "正确答案是 A。<filter> 元素中可以配置 <init-param>。"
 				},
 				{
 					"type": "choice",
 					"question": "下列关于关系模式的码叙述中，哪一项是不正确的？",
-					"choices": ["A: 当候选码多于一个时，选定其中一个作为主码", "B: 主码可以是单个属性，也可以是属性组。", "C: 不包含在主码中的属性称为主属性。",
+					"choices": [
+						"A: 当候选码多于一个时，选定其中一个作为主码",
+				 	"B: 主码可以是单个属性，也可以是属性组。",
+				  "C: 不包含在主码中的属性称为主属性。",
 						"D: 若一个关系模式中的所有属性构成码，则称为全码。"
 					],
-					"answer": "C",
-					"explanation": "正确答案是 C。"
+					"answer": "C: 不包含在主码中的属性称为主属性。",
+					"explanation": "正确答案是 C。不包含在主码中的属性称为非主属性或非码属性。"
 				},
 				{
 					"type": "choice",
 					"question": "在下列 SQL 语句中，修改表结构的语句是？",
 					"choices": ["A: CREATE", "B: ALTER", "C: UPDATE", "D: INSERT"],
-					"answer": "B",
-					"explanation": "正确答案是 B。"
+					"answer": "B: ALTER",
+					"explanation": "正确答案是 B。ALTER 语句用于修改表结构。"
 				},
 				{
 					"type": "choice",
 					"question": "MyBatis 框架动态 SQL 中，下列哪个标签起到处理 SQL 拼接问题的辅助作用（）。",
 					"choices": ["A: if", "B: choose", "C: trim", "D: foreach"],
-					"answer": "C",
-					"explanation": "正确答案是 C。"
+					"answer": "C: trim",
+					"explanation": "正确答案是 C。trim 标签在 MyBatis 中用于处理 SQL 拼接问题。"
 				},
 				{
 					"type": "choice",
 					"question": "以下哪个关键字用于左连接？",
 					"choices": ["A: JOIN", "B: LEFT JOIN", "C: RIGHT JOIN", "D: FULL JOIN"],
-					"answer": "B",
-					"explanation": "正确答案是 B。"
+					"answer": "B: LEFT JOIN",
+					"explanation": "正确答案是 B。LEFT JOIN 关键字用于左连接。"
 				},
 				{
 					"type": "choice",
 					"question": "有三个表，学生表 Stu(Sno,Sname,Ssex,Sbirthday,Sdept)，字段分别表示学号，姓名，性别，出生日期，所在系，学号为主码；课程表 Course(Cno,Cname) 字段分别表示课程号，课程名，课程号为主码，成绩表 SC(Sno,Cno,degree),字段分别表示学号，课程号，成绩，(Sno，Cno)共同为主码，分别参考 Stu，Course 表的主码。查询课程号是“C01”“C02”“C03”的课程名的语句是？",
-					"choices": ["A: SELECT Cname FROM Course WHERE Cno = \"C01\" && \"C02\" && \"C03\"",
+					"choices": [
+						"A: SELECT Cname FROM Course WHERE Cno = \"C01\" && \"C02\" && \"C03\"",
 						"B: SELECT Cname FROM Course WHERE Cno IN \"C01\" && \"C02\" && \"C03\"",
 						"C: SELECT Cname FROM Course WHERE Cno IN (\"C01\", \"C02\", \"C03\")",
 						"D: SELECT Cname FROM Course WHERE Cno IN( \"C01\" AND \"C02\" AND \"C03\")"
 					],
-					"answer": "C",
-					"explanation": "正确答案是 C。"
+					"answer": "C: SELECT Cname FROM Course WHERE Cno IN (\"C01\", \"C02\", \"C03\")",
+					"explanation": "正确答案是 C。使用 IN 子句来查询匹配'C01'，'C02'或'C03'的课程号的课程名。"
 				}
 
 				// 添加更多单选题
@@ -396,7 +458,7 @@
 						"C: public void Product(){}",
 						"D: public void Product(String name){}"
 					],
-					"answer": ["A", "B"],
+					"answer": ["A: public Product(){}", "B: public Product(String name){}"],
 					"explanation": "Product 类的构造方法是 public Product() 和 public Product(String name)。"
 				},
 				{
@@ -408,7 +470,7 @@
 						"C: Spring 配置文件可以有多个",
 						"D: Spring 配置文件只能有一个"
 					],
-					"answer": ["B", "C"],
+					"answer": ["B: Spring 配置文件可以不叫 applicationContext.xml", "C: Spring 配置文件可以有多个"],
 					"explanation": "Spring 配置文件可以有多个，且不一定要叫 applicationContext.xml。"
 				},
 				{
@@ -420,7 +482,7 @@
 						"C: 存储过程安全性较差",
 						"D: 存储过程执行速度慢"
 					],
-					"answer": ["A", "B"],
+					"answer": ["A: 编写存储过程比编写单个语句复杂，需要用户经验丰富", "B: 编写存储过程需要创建这些数据库对象的权限"],
 					"explanation": "存储过程的缺点包括编写复杂、需要权限和执行速度相对较慢。"
 				},
 				{
@@ -432,8 +494,13 @@
 						"C: BETWEEN AND",
 						"D: IN"
 					],
-					"answer": ["A", "B", "C", "D"],
-					"explanation": "WHERE 子句的条件表达式可以使用多种比较运算符，包括>=、<=、<>、!=、BETWEEN AND和IN等。"
+					"answer": [
+						"A: >=、<=",
+						"B: <>、!=",
+						"C: BETWEEN AND",
+						"D: IN"
+					],
+					"explanation": "WHERE 子句的条件表达式可以使用多种比较运算符，包括 >=、<=、<>、!=、BETWEEN AND 和 IN 等。"
 				},
 				{
 					"type": "multi-choice",
@@ -444,8 +511,8 @@
 						"C: TestNG",
 						"D: Nunit"
 					],
-					"answer": ["B", "C"],
-					"explanation": "基于 Java 程序编写单元测试可采用的框架包括JUnit和TestNG等。"
+					"answer": ["B: JUnit", "C: TestNG"],
+					"explanation": "基于 Java 程序编写单元测试可采用的框架包括 JUnit 和 TestNG 等。"
 				},
 				{
 					"type": "multi-choice",
@@ -456,7 +523,12 @@
 						"C: SELECT 城市, 面积, 人口 FROM 地区 ORDER BY 2, 3;",
 						"D: SELECT 城市, 面积 AS r, 人口 FROM 地区 ORDER BY 2, 3;"
 					],
-					"answer": ["A", "B", "C", "D"],
+					"answer": [
+						"A: SELECT 城市, 面积, 人口 FROM 地区 ORDER BY 面积, 人口;",
+						"B: SELECT 城市, 面积 AS r, 人口 AS s FROM 地区 ORDER BY r, s;",
+						"C: SELECT 城市, 面积, 人口 FROM 地区 ORDER BY 2, 3;",
+						"D: SELECT 城市, 面积 AS r, 人口 FROM 地区 ORDER BY 2, 3;"
+					],
 					"explanation": "这些 SQL 语句的含义相同，都是查询地区表中的城市、面积和人口，并按照不同的方式排序。"
 				},
 				{
@@ -468,8 +540,12 @@
 						"C: HAVING 子句后面可以使用聚集函数",
 						"D: HAVING 子句可以单独使用"
 					],
-					"answer": ["A", "C", "D"],
-					"explanation": "关于 HAVING 子句的说法正确的包括必须在特定位置、可以使用别名、可以使用聚集函数，且可以单独使用。"
+					"answer": [
+						"A: SQL 语句中，如果有 GROUP BY 子句，那么 HAVING 子句必须在 GROUP BY 子句的后面和 ORDER BY 子句的前面",
+						"C: HAVING 子句后面可以使用聚集函数",
+						"D: HAVING 子句可以单独使用"
+					],
+					"explanation": "关于 HAVING 子句的说法正确的包括必须在特定位置、可以使用聚集函数，且可以单独使用。"
 				},
 				{
 					"type": "multi-choice",
@@ -480,11 +556,15 @@
 						"C: LIKE 关键字可以进行模糊匹配",
 						"D: 可以使用 NOT 关键字对表达式取否"
 					],
-					"answer": ["B", "C", "D"],
-					"explanation": "关于比较运算符的说法正确的包括数据类型要求一致、可以进行模糊匹配，且可以使用 NOT 关键字。"
+					"answer": [
+						"B: 使用比较运算符时，运算符两端的数据类型要求一致",
+						"C: LIKE 关键字可以进行模糊匹配",
+						"D: 可以使用 NOT 关键字对表达式取否"
+					],
+					"explanation": "关于比较运算符的正确说法包括数据类型要求一致、可以进行模糊匹配，且可以使用 NOT 关键字。"
 				},
 				{
-					"type": "multi-choice",
+				 "type": "multi-choice",
 					"question": "内连接是 MySQL 默认的连接方式，可以把 INNER JOIN 简写为 JOIN，根据所使用的比较方式不同，内连接又可以分为？（多选）",
 					"choices": [
 						"A: 等值连接",
@@ -492,7 +572,11 @@
 						"C: 不等值连接",
 						"D: 交叉连接"
 					],
-					"answer": ["A", "B", "C"],
+					"answer": [
+						"A: 等值连接",
+						"B: 自然连接",
+						"C: 不等值连接"
+					],
 					"explanation": "内连接可以分为等值连接、自然连接和不等值连接等多种类型。"
 				},
 				{
@@ -504,8 +588,13 @@
 						"C: 应用程序",
 						"D: 数据库管理员 DBA"
 					],
-					"answer": ["A", "B", "C", "D"],
-					"explanation": "数据库系统一般由数据库、数据库管理系统、应用程序和数据库管理员等方面构成。"
+					"answer": [
+						"A: 数据库 DB",
+						"B: 数据库管理系统 DBMS",
+						"C: 应用程序",
+						"D: 数据库管理员 DBA"
+					],
+					"explanation": "数据库系统通常包括数据库、数据库管理系统、应用程序和数据库管理员等组成部分。"
 				},
 				{
 					"type": "multi-choice",
@@ -516,8 +605,12 @@
 						"C: 实现抽象类和接口的类必须实现其中的所有方法，除非它也是抽象类。接口中的方法都不能被实现",
 						"D: 接口中的方法都必须加上 public 关键字。"
 					],
-					"answer": ["A", "B", "C"],
-					"explanation": "正确答案是 A、B 和 C。抽象类可以包含非抽象方法，但也可以包含抽象方法。实现抽象类和接口的类必须实现其中的所有方法，除非它们也是抽象类。"
+					"answer": [
+						"A: 抽象类在 Java 语言中表示的是一种继承关系，一个类只能使用一次继承。但是一个类却可以实现多个接口。",
+						"B: 在抽象类中可以没有抽象方法",
+						"C: 实现抽象类和接口的类必须实现其中的所有方法，除非它也是抽象类。"
+					],
+					"explanation": "正确答案是 A、B 和 C。抽象类可以包含非抽象方法，实现抽象类和接口的类必须实现其中的所有方法，除非该类也是抽象类。"
 				},
 				{
 					"type": "multi-choice",
@@ -525,22 +618,33 @@
 					"choices": [
 						"A: TCP",
 						"B: HTTP",
-						"C: SMTP",
+				 	"C: SMTP",
 						"D: UDP",
 						"E: IP"
 					],
-					"answer": ["A", "D"],
-					"explanation": "正确答案是 A 和 D。TCP 和 UDP 协议位于传输层，而 HTTP、SMTP 和 IP 不位于传输层。"
+					"answer": [
+						"A: TCP",
+						"D: UDP"
+					],
+					"explanation": "正确答案是 A 和 D。TCP 和 UDP 协议位于 OSI 模型的传输层。"
 				},
 				{
 					"type": "multi-choice",
 					"question": "为了使线程处于暂停状态，可引用( )方法",
-					"choices": ["A: wait()", "B: join()", "C: sleep()", "D: notify()"],
-					"answer": ["B", "C"],
-					"explanation": "正确答案是 B 和 C。可以使用 join() 方法来等待线程完成，也可以使用 sleep() 方法来使线程暂停一段时间。"
+					"choices": [
+						"A: wait()",
+						"B: join()",
+						"C: sleep()",
+						"D: notify()"
+					],
+				 "answer": [
+						"B: join()",
+						"C: sleep()"
+					],
+					"explanation": "正确答案是 B 和 C。join() 方法允许一个线程等待另一个线程完成，而 sleep() 方法可以暂停当前线程。"
 				},
 				{
-					"type": "multi-choice",
+				 "type": "multi-choice",
 					"question": "关于 git 的临时工作区操作，下列说法正确的是（ ）。",
 					"choices": [
 						"A: git stash：创建保存临时工作区，只可执行一次，即只能创建一个临时工作区",
@@ -548,20 +652,27 @@
 						"C: git stash pop：恢复最新的进度到工作区。git 默认会把工作区和暂存区的改动都恢复到工作区。",
 						"D: git stash clear：删除所有存储的进度。"
 					],
-					"answer": ["B", "C", "D"],
-					"explanation": "正确答案是 B、C 和 D。git stash list 用于查看保存的工作区列表，git stash pop 用于恢复最新的进度到工作区，git stash clear 用于删除所有存储的进度。"
+				 "answer": [
+						"B: git stash list：查看保存的工作区列表",
+						"C: git stash pop：恢复最新的进度到工作区。git 默认会把工作区和暂存区的改动都恢复到工作区。",
+						"D: git stash clear：删除所有存储的进度。"
+					],
+					"explanation": "正确答案是 B、C 和 D。git stash list 查看所有存储的工作进度，git stash pop 恢复最近的进度，而 git stash clear 删除所有存储的进度。"
 				},
 				{
-					"type": "multi-choice",
+				 "type": "multi-choice",
 					"question": "使用 svnserve -d -r xx 启动服务时，以下说法正确的是（）。",
 					"choices": [
-						"A: -r 直接指定到版本库时，一个 svnserve 只能为一个版本库工作",
+				 	"A: -r 直接指定到版本库时，一个 svnserve 只能为一个版本库工作",
 						"B: -r 直接指定到版本库时，一个 svnserve 可以为多个版本库工作",
 						"C: -r 指定到版本库的上级目录时，一个 svnserve 只能为一个版本库工作",
 						"D: -r 指定到版本库的上级目录时，一个 svnserve 可以为多个版本库工作"
 					],
-					"answer": ["A", "D"],
-					"explanation": "正确答案是 A 和 D。当使用 svnserve 启动服务时，如果使用 -r 直接指定到版本库，一个 svnserve 只能为一个版本库工作；如果 -r 指定到版本库的上级目录，一个 svnserve 可以为多个版本库工作。"
+					"answer": [
+						"A: -r 直接指定到版本库时，一个 svnserve 只能为一个版本库工作",
+						"D: -r 指定到版本库的上级目录时，一个 svnserve 可以为多个版本库工作"
+				 ],
+					"explanation": "正确答案是 A 和 D。svnserve -d -r xx 启动时，如果 -r 直接指定到一个版本库，则只能为该版本库工作；如果 -r 指定到版本库的上级目录，则可以为多个版本库工作。"
 				},
 				{
 					"type": "multi-choice",
@@ -572,14 +683,23 @@
 						"C: jcenter 的优点是因为采取了 CDN 技术所以获取非常迅速",
 						"D: maven 的优点是仓库内容比 jcenter 要全面，在 jcenter 中找不到的内容可以在 maven 中找到"
 					],
-					"answer": ["A", "B", "C", "D"],
+					"answer": [
+						"A: jcenter 是 JFrog 公司提供的仓库服务",
+						"B: maven 是 Sonatype 公司提供的仓库服务",
+						"C: jcenter 的优点是因为采取了 CDN 技术所以获取非常迅速",
+				 	"D: maven 的优点是仓库内容比 jcenter 要全面，在 jcenter 中找不到的内容可以在 maven 中找到"
+					],
 					"explanation": "正确答案是 A、B、C 和 D。jcenter 是由 JFrog 公司提供的仓库服务，maven 是由 Sonatype 公司提供的仓库服务。jcenter 使用 CDN 技术，获取迅速，而 maven 仓库内容更全面。"
 				},
 				{
 					"type": "multi-choice",
 					"question": "nginx.conf 配置文件中哪些块构成了 nginx( )",
 					"choices": ["A: http", "B: server", "C: location", "D: listen"],
-					"answer": ["A", "B", "C"],
+					"answer": [
+						"A: http",
+						"B: server",
+						"C: location"
+				 ],
 					"explanation": "正确答案是 A、B 和 C。nginx.conf 配置文件中的 http、server 和 location 块构成了 Nginx 的配置。"
 				},
 				{
@@ -588,14 +708,21 @@
 					"choices": ["A: 使用 springloaded", "B: 引入 devtools 依赖", "C: spring-boot-starter",
 						"D: spring-boot-starter-data"
 					],
-					"answer": ["A", "B"],
+					"answer": [
+						"A: 使用 springloaded",
+						"B: 引入 devtools 依赖"
+					],
 					"explanation": "正确答案是 A 和 B。在 Spring Boot 项目中，可以通过使用 springloaded 或引入 devtools 依赖来实现热部署。"
 				},
 				{
 					"type": "multi-choice",
 					"question": "负载均衡部署方式有（ ）",
 					"choices": ["A: 路由模式", "B: 桥接模式", "C: 服务直接返回模式", "D: 适配器模式"],
-					"answer": ["A", "B", "C"],
+					"answer": [
+						"A: 路由模式",
+						"B: 桥接模式",
+						"C: 服务直接返回模式"
+					],
 					"explanation": "正确答案是 A、B 和 C。负载均衡的部署方式包括路由模式、桥接模式和服务直接返回模式。"
 				},
 				{
@@ -603,11 +730,15 @@
 					"question": "下列符合编码规范的是（ ）",
 					"choices": [
 						"A: 数据库、IO 操作等需要使用结束 close（）的对象必须在 try-catch-finally 的 finally 中 close（）。",
-						"B: 数组声明的时候使用 int[] index 而不要使用 int index[]。",
+				  "B: 数组声明的时候使用 int[] index 而不要使用 int index[]。",
 						"C: 所有的类必须重载 toString（）方法，返回该类有意义的内容。",
 						"D: 自己抛出的异常必须要填写详细的描述信息。"
 					],
-					"answer": ["A", "B", "D"],
+					"answer": [
+						"A: 数据库、IO 操作等需要使用结束 close（）的对象必须在 try-catch-finally 的 finally 中 close（）。",
+						"B: 数组声明的时候使用 int[] index 而不要使用 int index[]。",
+						"D: 自己抛出的异常必须要填写详细的描述信息。"
+					],
 					"explanation": "正确答案是 A、B 和 D。编码规范要求在数据库、IO 操作等需要使用结束 close() 的对象时必须在 try-catch-finally 的 finally 中 close()，数组声明使用 int[] index，自己抛出的异常必须填写详细描述信息。不是所有的类都必须重载 toString() 方法。"
 				},
 				{
@@ -619,11 +750,15 @@
 						"C: 存储过程在数据库中只能应用一次",
 						"D: 在存储过程中不可以定义变量"
 					],
-					"answer": ["B", "C", "D"],
+					"answer": [
+						"B: 修改存储过程相当于重新创建一个存储过程",
+						"C: 存储过程在数据库中只能应用一次",
+						"D: 在存储过程中不可以定义变量"
+					],
 					"explanation": "正确答案是 B、C 和 D。存储过程可以修改，不一定相当于重新创建。存储过程可以在数据库中应用多次，不是只能应用一次。在存储过程中可以定义变量。"
 				},
 				{
-					"type": "multi-choice",
+				 "type": "multi-choice",
 					"question": "DELIMITER //\nCREATE FUNCTION find_student(id INT(11))\nRETURNS VARCHAR(20)\nCOMMENT '查询某个学生的姓名'\nBEGIN\nRETURN(SELECT name FROM student WHERE student.id = id);\nEND //\nDELIMITER ;\n有自定义函数如上所示，关于该函数说法正确的是？",
 					"choices": [
 						"A: 创建了一个名称为 find_student 的函数",
@@ -631,7 +766,10 @@
 						"C: 调用该语句的时候可以不用给出参数",
 						"D: 自定义函数可以返回一个集合。"
 					],
-					"answer": ["A", "B"],
+					"answer": [
+						"A: 创建了一个名称为 find_student 的函数",
+				  "B: 该函数有一个参数，数据类型为整型"
+					],
 					"explanation": "正确答案是 A 和 B。这个SQL代码定义了一个名为 find_student 的函数，该函数接受一个整数类型的参数id，并返回一个长度为20的字符串。"
 				},
 				{
@@ -643,7 +781,10 @@
 						"C: Spring 是一个 IOC 和 AOP 容器",
 						"D: Spring 是一个入侵式的框架"
 					],
-					"answer": ["B", "C"],
+					"answer": [
+				 	"B: Spring 是一个轻量级的框架",
+						"C: Spring 是一个 IOC 和 AOP 容器"
+					],
 					"explanation": "正确答案是 B 和 C。Spring被认为是一个轻量级的框架，它提供了控制反转（IoC）和面向切面编程（AOP）的功能。"
 				},
 				{
@@ -655,7 +796,7 @@
 						"C: 对象主动的去找依赖类",
 						"D: 一定要用接口"
 					],
-					"answer": ["A", "B"],
+					"answer": ["A: 控制反转", "B: 对象被动的去找依赖类"],
 					"explanation": "正确答案是 A 和 B。IOC代表控制反转，它意味着对象的依赖关系被容器管理，对象不再主动查找它们的依赖类。"
 				},
 				{
@@ -664,14 +805,14 @@
 					"choices": [
 						"A: 是 AOP 中一系列连接点的集合",
 						"B: 在做 AOP 时定义切入点时必须的",
-						"C: 在做 AOP 时定义切入点不是必须的",
-						"D: 可以用正则表达式来定义切入点"
+				 	"C: 在做 AOP 时定义切入点不是必须的",
+				  "D: 可以用正则表达式来定义切入点"
 					],
-					"answer": ["A", "C", "D"],
+					"answer": ["A: 是 AOP 中一系列连接点的集合", "C: 在做 AOP 时定义切入点不是必须的", "D: 可以用正则表达式来定义切入点"],
 					"explanation": "正确答案是 A，C 和 D。切入点是AOP中一系列连接点的集合，但在做AOP时不一定必须定义切入点，并且可以使用正则表达式来定义切入点。"
 				},
 				{
-					"type": "multi-choice",
+				 "type": "multi-choice",
 					"question": "下面关于在 Spring 中配置 Bean 的 id 属性的说法正确的是（ ）",
 					"choices": [
 						"A: id 属性是必须，没有 id 属性就会报错",
@@ -679,19 +820,19 @@
 						"C: id 属性的值可以重复",
 						"D: id 属性的值不可以重复"
 					],
-					"answer": ["B", "D"],
+					"answer": ["B: id 属性不是必须的，可以没有", "D: id 属性的值不可以重复"],
 					"explanation": "正确答案是 B 和 D。在Spring中，id属性不是必须的，可以不指定，但如果指定了，id的值必须是唯一的。"
 				},
 				{
-					"type": "multi-choice",
+				 "type": "multi-choice",
 					"question": "下面关于 ApplicationContext 的说法正确的是（ ）",
 					"choices": [
-						"A: 是 BeanFactory 的实现类",
+				 	"A: 是 BeanFactory 的实现类",
 						"B: 是一个接口",
 						"C: 提供一些 BeanFactory 的扩展功能",
 						"D: 功能同 BeanFactory 一样"
 					],
-					"answer": ["B", "C"],
+					"answer": ["B: 是一个接口", "C: 提供一些 BeanFactory 的扩展功能"],
 					"explanation": "正确答案是 B 和 C。ApplicationContext是一个接口，它提供了一些BeanFactory的扩展功能，如国际化、事件传播等。"
 				},
 				{
@@ -703,7 +844,7 @@
 						"C: 系统加载的时候解析注解",
 						"D: 使用 ViewResolver 找到对应的业务模型执行以后的请求"
 					],
-					"answer": ["A", "B"],
+					"answer": ["A: HanderAdapter 负责绑定 Controller 与具体的方法之间的映射", "B: 使用 ModelAndView 找到对应的业务模型执行以后的请求"],
 					"explanation": "正确答案是 A 和 B。在SpringMVC中，HandlerAdapter负责将Controller与具体的方法之间进行映射，而使用ModelAndView找到对应的业务模型以执行后续的请求处理。"
 				},
 				{
@@ -715,7 +856,7 @@
 						"C: 具有很强的扩展性。",
 						"D: 易于集成到程序的构建过程中。"
 					],
-					"answer": ["A", "B", "C", "D"],
+					"answer": ["A: 测试代码与产品代码分离，有利于测试代码的管理和代码的发布", "B: 源代码公开，可以进行二次开发", "C: 具有很强的扩展性", "D: 易于集成到程序的构建过程中"],
 					"explanation": "正确答案是 A、B、C 和 D。JUnit具有这些优点，包括测试代码与产品代码分离、源代码公开、扩展性强以及易于集成到构建过程中。"
 				}
 
